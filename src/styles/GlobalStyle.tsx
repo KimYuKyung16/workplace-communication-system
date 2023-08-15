@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
 
   input {
     outline: none;
+    border: none;
    }
 
    textarea {
