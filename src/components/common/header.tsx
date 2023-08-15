@@ -27,7 +27,7 @@ const HeaderLayout = styled.header`
 
 const Profile = styled.img`
   position: absolute;
-  bottom: 5px;
+  bottom: 7px;
   right: 15px;
   width: 40px;
   height: 40px;

@@ -12,6 +12,11 @@ const GlobalStyle = createGlobalStyle`
     border: none;
    }
 
+   button {
+    outline: none;
+    border: none;
+   }
+
    textarea {
     resize: none;
     outline: none;
