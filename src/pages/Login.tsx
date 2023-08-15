@@ -1,8 +1,8 @@
 import React from "react";
 import { styled } from "styled-components";
-import Button from "../components/button";
+import Button from "../components/common/button";
 
-function index() {
+function Login() {
   return (
     <IndexLayout>
       <Header>
@@ -10,7 +10,7 @@ function index() {
       </Header>
       <Main>
         <MainLogo>
-          <img src="/image/network_img.png" alt="회사 로고" />
+          <img src="/network.png" alt="회사 로고" />
         </MainLogo>
         <MainLogin>
           <p>Login</p>
@@ -36,7 +36,9 @@ const IndexLayout = styled.div`
   width: 100vw;
   height: 100%;
   min-height: 100vh;
-  background-color: #4274bf;
+  background-color: #1c3150;
+  position: relative;
+  overflow-x: hidden;
 `;
 
 const Header = styled.div`
@@ -44,7 +46,7 @@ const Header = styled.div`
   align-items: center;
   width: 100vw;
   height: 70px;
-  background-color: #4274bf;
+  background-color: #1c3150;
   color: white;
   padding-left: 30px;
   font-size: 1.5rem;
@@ -63,7 +65,7 @@ const Main = styled.div`
   padding: 0 4vw 0px 4vw;
   width: 100%;
   height: calc(100vh - 70px);
-  background-color: #4274bf;
+  background-color: #1c3150;
 
   @media screen and (max-width: 768px) {
     justify-content: center;
@@ -80,16 +82,18 @@ const MainLogin = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #ffffff;
-  color: #4274bf;
+  color: #1c3150;
   border-radius: 20px;
   padding: 50px 5vw 60px 5vw;
   gap: 5px;
   min-height: 500px;
   box-shadow: 20px 20px 50px rgba(15, 34, 182, 0.16);
+  z-index: 1;
 
   & > p:first-child {
     font-size: 4.5rem;
     padding-bottom: 10px;
+    /* font-weight: 500; */
   }
 
   & > p:nth-child(3) {
@@ -116,12 +120,11 @@ const MainLogin = styled.div`
 
 const MainLogo = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
+  width: 70%;
 
   & > img {
-    width: 70%;
+    width: 900px;
+    position: absolute;
   }
 
   @media screen and (max-width: 768px) {
@@ -135,8 +138,9 @@ const LoginItem = styled.p`
   width: 100%;
 
   & > label {
-    color: #4274bf;
+    color: #1c3150;
     font-size: 2rem;
+    cursor: pointer;
   }
 
   & > input {
@@ -148,20 +152,17 @@ const LoginItem = styled.p`
     color: #5b5b5b;
     box-shadow: 5px 5px 10px rgba(15, 34, 182, 0.16);
 
-    &:checked {
-      border: 1px solid #4274bf;
-    }
-    &:hover {
-      border: 1px solid #4274bf;
+    &:focus {
+      border: 2px solid #1c3150;
     }
   }
 
   @media screen and (max-width: 768px) {
     & > label {
-      color: #4274bf;
+      color: #1c3150;
       font-size: 1.5rem;
     }
   }
 `;
 
-export default index;
+export default Login;
