@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import React from "react";
 
-import Index from "./pages/index"; // 시작 페이지
+import Login from "./pages/Login"; // 로그인 페이지
+import Main from "./pages/Main"; // 메인 페이지
 
 function App() {
   return (
@@ -11,7 +12,8 @@ function App() {
       <GlobalStyle />
       <Router>
         <Routes>
-          <Route path="/" element={<Index />}></Route>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="/main" element={<Main />}></Route>
         </Routes>
       </Router>
     </>
