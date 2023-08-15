@@ -22,7 +22,7 @@ function Login() {
             <label htmlFor="password">비밀번호</label>
             <input type="password" id="password" />
           </LoginItem>
-          <Button text="로그인" />
+          <Button text="로그인" large />
           <p>Network 회사 구성원만 이용할 수 있습니다.</p>
         </MainLogin>
       </Main>

@@ -1,7 +1,6 @@
 /* eslint-disable react/jsx-pascal-case */
 import React, { useState } from "react";
 import { styled } from "styled-components";
-import Header from "../components/common/header";
 import Layout from "../components/common/layout";
 import Employee from "../components/common/employee";
 
@@ -10,7 +9,6 @@ function Main_() {
 
   return (
     <Layout>
-      <Header />
       <Main>
         <MainSearch>
           <input type="text" placeholder="이름을 입력해주세요" />
