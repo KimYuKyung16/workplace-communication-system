@@ -24,6 +24,10 @@ const ButtonDefault = styled.button<{ large: boolean | undefined }>`
   font-size: ${(props) => (props.large ? "2.2rem" : "1.8rem")};
   box-shadow: 10px 10px 40px rgba(15, 34, 182, 0.16);
   cursor: pointer;
+
+  &:hover {
+    background-color: #172842;
+  }
 `;
 
 export default Button;
