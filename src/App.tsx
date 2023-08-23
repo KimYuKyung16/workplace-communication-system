@@ -6,7 +6,9 @@ import React from "react";
 import Login from "./pages/Login"; // 로그인 페이지
 import Main from "./pages/Main"; // 메인 페이지
 import Mypage from "./pages/Mypage"; // 내 정보
-import MypageEdit from "./pages/MypageEdit" // 내 정보 수정
+import MypageEdit from "./pages/MypageEdit"; // 내 정보 수정
+import AddLate from "./pages/AddLate"; // 내 정보 수정
+import Chat from "./pages/Chat"; // 내 정보 수정
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route path="/main" element={<Main />}></Route>
           <Route path="/my" element={<Mypage />}></Route>
           <Route path="/my/edit" element={<MypageEdit />}></Route>
+          <Route path="/my/late" element={<AddLate />}></Route>
+          <Route path="/chat" element={<Chat />}></Route>
         </Routes>
       </Router>
     </>
