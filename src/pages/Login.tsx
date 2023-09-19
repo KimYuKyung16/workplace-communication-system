@@ -1,8 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
 import Button from "../components/common/button";
+import {
+  checkEmployeeIdentificationNum,
+  checkPassword,
+} from "../../src/utils/validateLogin";
 
 function Login() {
+  const [loginVals, setLoginVals] = useState({
+    employeeIdentificationNum: "",
+    password: "",
+  });
+  const [errorMsg, setErrorMsg] = useState("");
+
+  const onChangeEmployeeIdentificationNum = (
+    e: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    setLoginVals((val) => ({
+      ...val,
+      employeeIdentificationNum: e.target.value,
+    }));
+  };
+  const onChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setLoginVals((val) => ({ ...val, password: e.target.value }));
+  };
+
+  const onClickLoginBtn = () => {
+    try {
+      checkEmployeeIdentificationNum(loginVals.employeeIdentificationNum);
+      checkPassword(loginVals.password);
+      setErrorMsg("");
+    } catch (e: any) {
+      setErrorMsg(e.message);
+    }
+  };
+
   return (
     <IndexLayout>
       <Header>
@@ -16,19 +48,31 @@ function Login() {
           <p>Login</p>
           <LoginItem>
             <label htmlFor="employee-identification-number">사번</label>
-            <input type="text" id="employee-identification-number" />
+            <input
+              onChange={onChangeEmployeeIdentificationNum}
+              type="text"
+              id="employee-identification-number"
+            />
           </LoginItem>
           <LoginItem>
             <label htmlFor="password">비밀번호</label>
-            <input type="password" id="password" />
+            <input onChange={onChangePassword} type="password" id="password" />
           </LoginItem>
-          <Button text="로그인" large />
+          <Button text="로그인" onClick={onClickLoginBtn} large />
+          <ErrorMessage>{errorMsg}</ErrorMessage>
           <p>Network 회사 구성원만 이용할 수 있습니다.</p>
         </MainLogin>
       </Main>
     </IndexLayout>
   );
 }
+
+const ErrorMessage = styled.p`
+  color: #2200ff;
+  font-size: 1.3rem;
+  padding-top: 10px;
+  font-weight: 400;
+`;
 
 const IndexLayout = styled.div`
   display: flex;
